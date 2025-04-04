@@ -135,25 +135,74 @@ h1 {
 }
 
 .details {
-    margin: 20px 0;
+    margin: 30px 0;
     padding: 0 15px;
+    background: linear-gradient(to right, rgba(248, 249, 250, 0) 0%, rgba(248, 249, 250, 0.8) 20%, rgba(248, 249, 250, 0.8) 80%, rgba(248, 249, 250, 0) 100%);
 }
 
-.details div {
-    margin: 12px 0;
+.details-container {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    padding: 30px 0;
+    position: relative;
+}
+
+.details-container::before,
+.details-container::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 1px;
+    background: linear-gradient(to right, transparent, #ccc, transparent);
+}
+
+.details-container::before {
+    top: 0;
+}
+
+.details-container::after {
+    bottom: 0;
+}
+
+.detail-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 0 20px;
+}
+
+.detail-icon {
+    width: 50px;
+    height: 50px;
+    background: #fff;
+    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
 }
 
-.details i {
-    color: #666;
-    font-size: 1.1rem;
+.detail-icon i {
+    color: #4a90e2;
+    font-size: 1.3rem;
 }
 
-.details p {
+.detail-text {
+    flex: 1;
+}
+
+.detail-text h4 {
+    font-family: 'Playfair Display', serif;
     color: #333;
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+}
+
+.detail-text p {
+    color: #666;
     font-size: 1rem;
 }
 
@@ -171,7 +220,7 @@ h1 {
 }
 
 .rsvp {
-    margin: 20px 0;
+    margin: 40px 0 20px;
     padding: 0 15px;
 }
 
@@ -179,13 +228,13 @@ h1 {
     background: #4a90e2;
     color: white;
     border: none;
-    padding: 12px 25px;
+    padding: 12px 30px;
     font-size: 1rem;
     border-radius: 25px;
     cursor: pointer;
     transition: all 0.3s ease;
     width: 100%;
-    max-width: 200px;
+    max-width: 250px;
 }
 
 .rsvp button:hover {
@@ -383,8 +432,33 @@ form button:hover {
         font-size: 1rem;
     }
 
-    .details p {
+    .details-container {
+        flex-direction: row;
+        justify-content: center;
+        gap: 40px;
+    }
+
+    .detail-item {
+        flex: 1;
+        max-width: 300px;
+        justify-content: center;
+    }
+
+    .detail-text h4 {
+        font-size: 1.2rem;
+    }
+
+    .detail-text p {
         font-size: 1.1rem;
+    }
+
+    .detail-icon {
+        width: 60px;
+        height: 60px;
+    }
+
+    .detail-icon i {
+        font-size: 1.5rem;
     }
 
     .venue-image {
@@ -393,6 +467,9 @@ form button:hover {
 
     .rsvp button {
         width: auto;
+        min-width: 250px;
+        padding: 15px 35px;
+        font-size: 1.1rem;
     }
 
     .time-block {
@@ -425,24 +502,13 @@ form button:hover {
         grid-auto-rows: minmax(150px, auto);
     }
 
-    .gallery-item:nth-child(1) {
+    .gallery-item:nth-child(5n + 1) {
         grid-column: span 2;
         grid-row: span 2;
     }
 
-    .gallery-item:nth-child(2) {
+    .gallery-item:nth-child(10) {
         grid-column: span 2;
-        grid-row: span 1;
-    }
-
-    .gallery-item:nth-child(3) {
-        grid-column: span 1;
-        grid-row: span 2;
-    }
-
-    .gallery-item:nth-child(4) {
-        grid-column: span 1;
-        grid-row: span 2;
     }
 
     .album-section h3 {
@@ -476,6 +542,43 @@ form button:hover {
     .quote-author {
         font-size: 1.1rem;
     }
+
+    .time-section .section-container {
+        flex-direction: row;
+        justify-content: center;
+        gap: 60px;
+    }
+
+    .location-section .detail-item {
+        max-width: 500px;
+        margin: 0 auto;
+    }
+
+    .detail-text h4 {
+        font-size: 1.2rem;
+    }
+
+    .detail-text p {
+        font-size: 1.1rem;
+    }
+
+    .detail-icon {
+        width: 60px;
+        height: 60px;
+    }
+
+    .detail-icon i {
+        font-size: 1.5rem;
+    }
+
+    .map-link {
+        padding: 10px 20px;
+        font-size: 1rem;
+    }
+
+    .map-link i {
+        font-size: 1.1rem;
+    }
 }
 
 .album-section {
@@ -483,12 +586,25 @@ form button:hover {
     padding: 0 15px;
 }
 
-.album-section h3 {
+.album-title {
+    text-align: center;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.album-title h3 {
     font-family: 'Playfair Display', serif;
     color: #333;
     font-size: 1.5rem;
-    margin-bottom: 20px;
-    text-align: center;
+    margin-bottom: 5px;
+}
+
+.album-title .english-title {
+    font-family: 'Playfair Display', serif;
+    color: #4a90e2;
+    font-size: 1.2rem;
+    font-style: italic;
+    margin-top: 5px;
 }
 
 .photo-gallery {
@@ -505,22 +621,12 @@ form button:hover {
     border-radius: 10px;
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
+    aspect-ratio: 1;
+    cursor: pointer;
 }
 
-.gallery-item:nth-child(1) {
-    grid-row: span 2;
-}
-
-.gallery-item:nth-child(2) {
-    grid-row: span 1;
-}
-
-.gallery-item:nth-child(3) {
-    grid-row: span 1;
-}
-
-.gallery-item:nth-child(4) {
-    grid-row: span 2;
+.gallery-item:nth-child(5n + 1) {
+    grid-column: span 2;
 }
 
 .gallery-item img {
@@ -532,6 +638,7 @@ form button:hover {
 
 .gallery-item:hover {
     transform: scale(1.03);
+    z-index: 1;
 }
 
 .gallery-item:hover img {
@@ -578,13 +685,6 @@ form button:hover {
     margin: 5px 0;
 }
 
-.parent-title {
-    color: #666;
-    font-size: 0.9rem;
-    margin-bottom: 10px;
-    font-style: italic;
-}
-
 .quote-section {
     padding: 30px 15px 20px 15px;
     text-align: center;
@@ -601,5 +701,358 @@ form button:hover {
     line-height: 1.6;
     margin-bottom: 10px;
     font-style: italic;
+}
+
+.time-section, .location-section {
+    margin: 20px 0;
+    padding: 20px 15px;
+    background: linear-gradient(to right, rgba(248, 249, 250, 0) 0%, rgba(248, 249, 250, 0.8) 20%, rgba(248, 249, 250, 0.8) 80%, rgba(248, 249, 250, 0) 100%);
+}
+
+.section-container {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    padding: 20px 0;
+    position: relative;
+}
+
+.section-container::before,
+.section-container::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 1px;
+    background: linear-gradient(to right, transparent, #ccc, transparent);
+}
+
+.section-container::before {
+    top: 0;
+}
+
+.section-container::after {
+    bottom: 0;
+}
+
+.detail-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 0 20px;
+    justify-content: center;
+}
+
+.detail-icon {
+    width: 50px;
+    height: 50px;
+    background: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.detail-icon i {
+    color: #4a90e2;
+    font-size: 1.3rem;
+}
+
+.detail-text {
+    text-align: left;
+}
+
+.detail-text h4 {
+    font-family: 'Playfair Display', serif;
+    color: #333;
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+}
+
+.detail-text p {
+    color: #666;
+    font-size: 1rem;
+}
+
+.location-section {
+    margin: 20px 0;
+    padding: 20px 15px;
+    background: linear-gradient(to right, rgba(248, 249, 250, 0) 0%, rgba(248, 249, 250, 0.8) 20%, rgba(248, 249, 250, 0.8) 80%, rgba(248, 249, 250, 0) 100%);
+}
+
+.location-section .detail-item {
+    padding: 0 15px;
+}
+
+.location-section .detail-icon {
+    width: 60px;
+    height: 60px;
+}
+
+.location-section .detail-icon i {
+    font-size: 1.5rem;
+}
+
+.venue-details {
+    margin-top: 5px;
+}
+
+.venue-details h5 {
+    font-family: 'Playfair Display', serif;
+    color: #4a90e2;
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+    letter-spacing: 0.5px;
+}
+
+.venue-hall {
+    color: #333;
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.venue-address {
+    color: #666;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 12px;
+}
+
+.map-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    background-color: #4a90e2;
+    color: white;
+    text-decoration: none;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(74, 144, 226, 0.3);
+}
+
+.map-link i {
+    font-size: 1rem;
+}
+
+.map-link:hover {
+    background-color: #357abd;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(74, 144, 226, 0.4);
+}
+
+.lightbox-modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    padding: 20px;
+}
+
+.lightbox-content {
+    max-width: 90%;
+    max-height: 90vh;
+    margin: auto;
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    object-fit: contain;
+}
+
+.lightbox-close {
+    position: absolute;
+    right: 25px;
+    top: 15px;
+    color: #fff;
+    font-size: 35px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 2001;
+}
+
+.lightbox-nav {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 20px;
+}
+
+.lightbox-prev,
+.lightbox-next {
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.lightbox-prev:hover,
+.lightbox-next:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.wedding-gift {
+    margin: 40px 0;
+    padding: 0 15px;
+    text-align: center;
+}
+
+.wedding-gift button {
+    background: #4a90e2;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    font-size: 1rem;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    max-width: 250px;
+}
+
+.wedding-gift button:hover {
+    background: #357abd;
+    transform: translateY(-2px);
+}
+
+#giftModal .modal-content {
+    max-width: 800px;
+}
+
+#giftModal h2 {
+    font-family: 'Playfair Display', serif;
+    color: #333;
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.gift-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-top: 20px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.bank-account {
+    background: #f8f9fa;
+    border-radius: 15px;
+    padding: 25px;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.account-info {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex: 1;
+}
+
+.qr-code {
+    width: 140px;
+    height: 140px;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid #eee;
+}
+
+.qr-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.bank-account:hover {
+    transform: translateY(-2px);
+}
+
+.account-icon {
+    width: 50px;
+    height: 50px;
+    background: #4a90e2;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.account-icon i {
+    color: white;
+    font-size: 1.5rem;
+}
+
+.account-details {
+    text-align: left;
+    flex: 1;
+}
+
+.account-details h4 {
+    font-family: 'Playfair Display', serif;
+    color: #333;
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+}
+
+.bank-name {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+}
+
+.account-number {
+    color: #4a90e2;
+    font-size: 1.1rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+@media (max-width: 767px) {
+    .bank-account {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .account-info {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+
+    .qr-code {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+@media (min-width: 768px) {
+    .bank-account {
+        padding: 30px;
+    }
+
+    .qr-code {
+        width: 140px;
+        height: 140px;
+    }
 }
 

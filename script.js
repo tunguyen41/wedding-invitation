@@ -122,4 +122,85 @@ document.addEventListener('DOMContentLoaded', () => {
             element.style.transform = 'translateY(0)';
         }, index * 200);
     });
-}); 
+});
+
+// Lightbox functionality
+const lightboxModal = document.querySelector('.lightbox-modal');
+const lightboxImage = document.getElementById('lightboxImage');
+const lightboxClose = document.querySelector('.lightbox-close');
+const lightboxPrev = document.querySelector('.lightbox-prev');
+const lightboxNext = document.querySelector('.lightbox-next');
+let currentImageIndex = 0;
+const galleryItems = document.querySelectorAll('.gallery-item img');
+
+function openLightbox(item) {
+    const clickedImage = item.querySelector('img');
+    lightboxImage.src = clickedImage.src;
+    lightboxModal.style.display = 'block';
+    document.body.style.overflow = 'hidden';
+    
+    // Find the index of clicked image
+    currentImageIndex = Array.from(galleryItems).indexOf(clickedImage);
+}
+
+function closeLightbox() {
+    lightboxModal.style.display = 'none';
+    document.body.style.overflow = 'auto';
+}
+
+function showNextImage() {
+    currentImageIndex = (currentImageIndex + 1) % galleryItems.length;
+    lightboxImage.src = galleryItems[currentImageIndex].src;
+}
+
+function showPrevImage() {
+    currentImageIndex = (currentImageIndex - 1 + galleryItems.length) % galleryItems.length;
+    lightboxImage.src = galleryItems[currentImageIndex].src;
+}
+
+// Event Listeners
+lightboxClose.addEventListener('click', closeLightbox);
+lightboxNext.addEventListener('click', showNextImage);
+lightboxPrev.addEventListener('click', showPrevImage);
+
+// Close on clicking outside the image
+lightboxModal.addEventListener('click', function(e) {
+    if (e.target === lightboxModal) {
+        closeLightbox();
+    }
+});
+
+// Keyboard navigation
+document.addEventListener('keydown', function(e) {
+    if (lightboxModal.style.display === 'block') {
+        if (e.key === 'Escape') closeLightbox();
+        if (e.key === 'ArrowRight') showNextImage();
+        if (e.key === 'ArrowLeft') showPrevImage();
+    }
+});
+
+// Gift Modal
+const giftModal = document.getElementById('giftModal');
+const giftBtn = document.getElementById('giftBtn');
+const closeButtons = document.getElementsByClassName('close');
+
+giftBtn.onclick = function() {
+    giftModal.style.display = 'block';
+}
+
+// Update close functionality for all modals
+Array.from(closeButtons).forEach(button => {
+    button.onclick = function() {
+        const modal = button.closest('.modal');
+        if (modal) {
+            modal.style.display = 'none';
+        }
+    }
+});
+
+// Update window click to close all modals
+window.onclick = function(event) {
+    if (event.target.classList.contains('modal')) {
+        event.target.style.display = 'none';
+    }
+} 
