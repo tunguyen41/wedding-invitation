@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wedding Invitation</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="music-player">
+        <audio id="bgMusic" loop>
+            <source src="music/wedding-song.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+        <button id="musicToggle" class="music-btn">
+            <i class="fas fa-music"></i>
+            <span class="music-text">Play Music</span>
+        </button>
+    </div>
+
+    <div class="container">
+        <div class="invitation-card">
+            <div class="header-image">
+                <img src="images/venue.jpg" alt="Wedding Header" class="header-bg">
+            </div>
+            
+            <div class="quote-section">
+                <p class="quote">"In all the world, there is no heart for me like yours.<br>In all the world, there is no love for you like mine."</p>
+            </div>
+
+            <div class="header">
+                <h1>Wedding Invitation</h1>
+                <div class="couple-names">
+                    <span class="name">Thanh</span>
+                    <span class="and">&</span>
+                    <span class="name">Hoa</span>
+                </div>
+            </div>
+
+            <div class="couple-sections">
+                <div class="groom-section">
+                    <h2>The Groom</h2>
+                    <div class="photo-container">
+                        <img src="images/groom.jpg" alt="Groom Photo" class="couple-photo">
+                    </div>
+                    <div class="person-details">
+                        <h3>Thanh</h3>
+                    
+                    </div>
+                </div>
+
+                <div class="bride-section">
+                    <h2>The Bride</h2>
+                    <div class="photo-container">
+                        <img src="images/brides.jpg" alt="Bride Photo" class="couple-photo">
+                    </div>
+                    <div class="person-details">
+                        <h3>Hoa</h3>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="parents-info">
+                <div class="parents-section">
+                    <h3>Parents of the Groom</h3>
+                    <div class="parent-details">
+                        <p class="parent-name">Mr. Nguyen Van A</p>
+                        <p class="parent-title">Father</p>
+                        <p class="parent-name">Mrs. Nguyen Thi B</p>
+                        <p class="parent-title">Mother</p>
+                    </div>
+                </div>
+                <div class="parents-section">
+                    <h3>Parents of the Bride</h3>
+                    <div class="parent-details">
+                        <p class="parent-name">Mr. Tran Van C</p>
+                        <p class="parent-title">Father</p>
+                        <p class="parent-name">Mrs. Tran Thi D</p>
+                        <p class="parent-title">Mother</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="details">
+                <div class="date">
+                    <i class="far fa-calendar-alt"></i>
+                    <p>Saturday, 15th June 2024</p>
+                </div>
+                <div class="time">
+                    <i class="far fa-clock"></i>
+                    <p>11:00 AM</p>
+                </div>
+                <div class="location">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <p>Grand Ballroom, Thanh Hoa</p>
+                </div>
+            </div>
+
+            <div class="venue-photo">
+                <img src="images/z6276583641780_d9d7c58e4ea090aaf98b75e82eabc3d9.jpg" alt="Venue Photo" class="venue-image">
+            </div>
+
+            <div class="rsvp">
+                <button id="rsvpBtn">RSVP</button>
+            </div>
+
+            <div class="countdown">
+                <h3>Countdown to the Big Day</h3>
+                <div class="timer">
+                    <div class="time-block">
+                        <span id="days">00</span>
+                        <span class="label">Days</span>
+                    </div>
+                    <div class="time-block">
+                        <span id="hours">00</span>
+                        <span class="label">Hours</span>
+                    </div>
+                    <div class="time-block">
+                        <span id="minutes">00</span>
+                        <span class="label">Minutes</span>
+                    </div>
+                    <div class="time-block">
+                        <span id="seconds">00</span>
+                        <span class="label">Seconds</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="album-section">
+                <h3>Our Memories</h3>
+                <div class="photo-gallery">
+                    <div class="gallery-item">
+                        <img src="images/z6276583636430_cf698b41e44ca265efa3dd38fc797d68.jpg" alt="Memory 1">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="images/z6276583628068_a530bc354873818abf9c9ff14819ae8a.jpg" alt="Memory 2">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="images/z6276583630743_8d1e8d12212646a21fe1de0d69c92137.jpg" alt="Memory 3">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="images/z6276583641780_d9d7c58e4ea090aaf98b75e82eabc3d9.jpg" alt="Memory 4">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="rsvpModal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>RSVP</h2>
+            <form id="rsvpForm">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <select required>
+                    <option value="">Will you attend?</option>
+                    <option value="yes">Yes, I'll be there</option>
+                    <option value="no">Sorry, I can't make it</option>
+                </select>
+                <textarea placeholder="Message (optional)"></textarea>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 

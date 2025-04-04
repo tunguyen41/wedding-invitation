@@ -1,0 +1,605 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.container {
+    max-width: 800px;
+    width: 100%;
+}
+
+.invitation-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.header-image {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.header-bg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.header {
+    margin: 20px 0;
+    padding: 0 15px;
+}
+
+h1 {
+    font-family: 'Playfair Display', serif;
+    color: #333;
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+.couple-names {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.and {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    color: #666;
+}
+
+.couple-sections {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 0 15px;
+    margin: 30px 0;
+}
+
+.groom-section, .bride-section {
+    background: #f8f9fa;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.bride-section {
+    margin-left: auto;
+    max-width: 350px;
+}
+
+.groom-section h2, .bride-section h2 {
+    font-family: 'Playfair Display', serif;
+    color: #333;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.photo-container {
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.couple-photo {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.couple-photo:hover {
+    transform: scale(1.03);
+}
+
+.person-details {
+    margin-top: 15px;
+}
+
+.person-details h3 {
+    font-family: 'Playfair Display', serif;
+    color: #333;
+    font-size: 1.3rem;
+    margin-bottom: 5px;
+}
+
+.person-details p {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.details {
+    margin: 20px 0;
+    padding: 0 15px;
+}
+
+.details div {
+    margin: 12px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.details i {
+    color: #666;
+    font-size: 1.1rem;
+}
+
+.details p {
+    color: #333;
+    font-size: 1rem;
+}
+
+.venue-photo {
+    margin: 20px 0;
+    padding: 0 15px;
+}
+
+.venue-image {
+    width: 100%;
+    max-height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.rsvp {
+    margin: 20px 0;
+    padding: 0 15px;
+}
+
+.rsvp button {
+    background: #4a90e2;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 1rem;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    max-width: 200px;
+}
+
+.rsvp button:hover {
+    background: #357abd;
+    transform: translateY(-2px);
+}
+
+.countdown {
+    margin: 20px 0;
+    padding: 0 15px;
+}
+
+.countdown h3 {
+    color: #333;
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+}
+
+.timer {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.time-block {
+    background: #f8f9fa;
+    padding: 10px;
+    border-radius: 8px;
+    min-width: 60px;
+}
+
+.time-block span {
+    display: block;
+}
+
+.time-block span:first-child {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.time-block .label {
+    font-size: 0.7rem;
+    color: #666;
+    margin-top: 3px;
+}
+
+/* Music Player Mobile Styles */
+.music-player {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 1000;
+}
+
+.music-btn {
+    background: rgba(255, 255, 255, 0.9);
+    border: none;
+    padding: 8px 15px;
+    border-radius: 25px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.music-btn i {
+    color: #4a90e2;
+    font-size: 1rem;
+}
+
+.music-text {
+    font-size: 0.8rem;
+    color: #333;
+}
+
+/* Modal Mobile Styles */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+.modal-content {
+    background: white;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 15px;
+}
+
+input, select, textarea {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 0.9rem;
+}
+
+textarea {
+    height: 80px;
+    resize: vertical;
+}
+
+form button {
+    background: #4a90e2;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+form button:hover {
+    background: #357abd;
+}
+
+/* Desktop Styles */
+@media (min-width: 768px) {
+    body {
+        padding: 20px;
+    }
+
+    .header-image {
+        height: 300px;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    .name {
+        font-size: 2rem;
+    }
+
+    .and {
+        font-size: 1.5rem;
+    }
+
+    .couple-sections {
+        flex-direction: row;
+        justify-content: flex-start;
+        gap: 20px;
+    }
+
+    .groom-section {
+        flex: 1;
+        max-width: 350px;
+    }
+
+    .bride-section {
+        margin-left: auto;
+        max-width: 350px;
+    }
+
+    .photo-container {
+        max-width: 300px;
+    }
+
+    .couple-photo {
+        height: 350px;
+    }
+
+    .person-details h3 {
+        font-size: 1.5rem;
+    }
+
+    .person-details p {
+        font-size: 1rem;
+    }
+
+    .details p {
+        font-size: 1.1rem;
+    }
+
+    .venue-image {
+        max-height: 400px;
+    }
+
+    .rsvp button {
+        width: auto;
+    }
+
+    .time-block {
+        min-width: 80px;
+    }
+
+    .time-block span:first-child {
+        font-size: 2rem;
+    }
+
+    .time-block .label {
+        font-size: 0.8rem;
+    }
+
+    .music-btn {
+        padding: 10px 20px;
+    }
+
+    .music-btn i {
+        font-size: 1.2rem;
+    }
+
+    .music-text {
+        font-size: 0.9rem;
+    }
+
+    .photo-gallery {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 15px;
+        grid-auto-rows: minmax(150px, auto);
+    }
+
+    .gallery-item:nth-child(1) {
+        grid-column: span 2;
+        grid-row: span 2;
+    }
+
+    .gallery-item:nth-child(2) {
+        grid-column: span 2;
+        grid-row: span 1;
+    }
+
+    .gallery-item:nth-child(3) {
+        grid-column: span 1;
+        grid-row: span 2;
+    }
+
+    .gallery-item:nth-child(4) {
+        grid-column: span 1;
+        grid-row: span 2;
+    }
+
+    .album-section h3 {
+        font-size: 2rem;
+    }
+
+    .parents-info {
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 30px;
+    }
+
+    .parents-section:first-child {
+        text-align: left;
+        margin-right: auto;
+    }
+
+    .parents-section:last-child {
+        text-align: right;
+        margin-left: auto;
+    }
+
+    .parent-details {
+        text-align: inherit;
+    }
+
+    .quote {
+        font-size: 1.5rem;
+    }
+
+    .quote-author {
+        font-size: 1.1rem;
+    }
+}
+
+.album-section {
+    margin: 20px 0;
+    padding: 0 15px;
+}
+
+.album-section h3 {
+    font-family: 'Playfair Display', serif;
+    color: #333;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.photo-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-top: 20px;
+    grid-auto-rows: minmax(120px, auto);
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:nth-child(1) {
+    grid-row: span 2;
+}
+
+.gallery-item:nth-child(2) {
+    grid-row: span 1;
+}
+
+.gallery-item:nth-child(3) {
+    grid-row: span 1;
+}
+
+.gallery-item:nth-child(4) {
+    grid-row: span 2;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: scale(1.03);
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+.parents-info {
+    margin: 20px 0;
+    padding: 0 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.parents-section {
+    background: #f8f9fa;
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+}
+
+.parents-section h3 {
+    font-family: 'Playfair Display', serif;
+    color: #333;
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+}
+
+.parents-section p {
+    color: #666;
+    font-size: 1.1rem;
+}
+
+.parent-details {
+    margin-top: 15px;
+}
+
+.parent-name {
+    font-family: 'Playfair Display', serif;
+    color: #333;
+    font-size: 1.1rem;
+    margin: 5px 0;
+}
+
+.parent-title {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+    font-style: italic;
+}
+
+.quote-section {
+    padding: 30px 15px 20px 15px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.9);
+    margin: -10px 0 20px 0;
+    position: relative;
+    z-index: 1;
+}
+
+.quote {
+    font-family: 'Playfair Display', serif;
+    color: #333;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 10px;
+    font-style: italic;
+}
+
