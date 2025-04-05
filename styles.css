@@ -6,37 +6,97 @@
 
 body {
     font-family: 'Montserrat', sans-serif;
-    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    background: #F5EFE8;
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 10px;
+    position: relative;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 300px;
+    height: 300px;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path fill="%237F0C0C" fill-opacity="0.1" d="M50 0C55 20 80 25 100 30C80 35 55 40 50 60C45 40 20 35 0 30C20 25 45 20 50 0Z M30 40C33 52 48 55 60 58C48 61 33 64 30 76C27 64 12 61 0 58C12 55 27 52 30 40Z M70 40C73 52 88 55 100 58C88 61 73 64 70 76C67 64 52 61 40 58C52 55 67 52 70 40Z"/></svg>') repeat;
+    opacity: 0.3;
+    z-index: -1;
+    transform: rotate(-15deg);
+}
+
+body::after {
+    content: '';
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 300px;
+    height: 300px;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path fill="%237F0C0C" fill-opacity="0.1" d="M50 0C55 20 80 25 100 30C80 35 55 40 50 60C45 40 20 35 0 30C20 25 45 20 50 0Z M30 40C33 52 48 55 60 58C48 61 33 64 30 76C27 64 12 61 0 58C12 55 27 52 30 40Z M70 40C73 52 88 55 100 58C88 61 73 64 70 76C67 64 52 61 40 58C52 55 67 52 70 40Z"/></svg>') repeat;
+    opacity: 0.3;
+    z-index: -1;
+    transform: rotate(15deg);
 }
 
 .container {
     max-width: 800px;
     width: 100%;
+    background: #F5EFE8;
 }
 
 .invitation-card {
-    background: white;
+    background: #F5EFE8;
     border-radius: 15px;
     overflow: hidden;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     text-align: center;
+    position: relative;
+}
+
+.invitation-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 150px;
+    height: 150px;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path fill="%237F0C0C" fill-opacity="0.1" d="M50 0C55 20 80 25 100 30C80 35 55 40 50 60C45 40 20 35 0 30C20 25 45 20 50 0Z"/></svg>') no-repeat;
+    opacity: 0.2;
+    z-index: 0;
+}
+
+.invitation-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 150px;
+    height: 150px;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path fill="%237F0C0C" fill-opacity="0.1" d="M50 0C55 20 80 25 100 30C80 35 55 40 50 60C45 40 20 35 0 30C20 25 45 20 50 0Z"/></svg>') no-repeat;
+    opacity: 0.2;
+    z-index: 0;
+    transform: rotate(180deg);
 }
 
 .header-image {
-    width: 100%;
-    height: 200px;
+    width: 70%;
+    max-width: 600px;
+    height: 800px;
     overflow: hidden;
+    position: relative;
+    margin: 0 auto;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 .header-bg {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center;
 }
 
 .header {
@@ -46,7 +106,7 @@ body {
 
 h1 {
     font-family: 'Playfair Display', serif;
-    color: #333;
+    color: #7F0C0C;
     font-size: 1.8rem;
     margin-bottom: 15px;
 }
@@ -62,13 +122,13 @@ h1 {
 .name {
     font-family: 'Playfair Display', serif;
     font-size: 1.5rem;
-    color: #333;
+    color: #7F0C0C;
 }
 
 .and {
     font-family: 'Playfair Display', serif;
     font-size: 1.2rem;
-    color: #666;
+    color: #7F0C0C;
 }
 
 .couple-sections {
@@ -80,27 +140,33 @@ h1 {
 }
 
 .groom-section, .bride-section {
-    background: #f8f9fa;
+    background: #F5EFE8;
     border-radius: 15px;
     padding: 20px;
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-}
-
-.bride-section {
-    margin-left: auto;
     max-width: 350px;
+    margin: 0 auto;
 }
 
-.groom-section h2, .bride-section h2 {
+.groom-section h2 {
     font-family: 'Playfair Display', serif;
-    color: #333;
+    color: #7F0C0C;
     font-size: 1.5rem;
     margin-bottom: 15px;
+    text-align: left;
+}
+
+.bride-section h2 {
+    font-family: 'Playfair Display', serif;
+    color: #7F0C0C;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    text-align: right;
 }
 
 .photo-container {
     width: 100%;
-    max-width: 300px;
+    height: 350px;
     margin: 0 auto;
     border-radius: 10px;
     overflow: hidden;
@@ -109,7 +175,7 @@ h1 {
 
 .couple-photo {
     width: 100%;
-    height: 300px;
+    height: 350px;
     object-fit: cover;
     transition: transform 0.3s ease;
 }
@@ -124,7 +190,7 @@ h1 {
 
 .person-details h3 {
     font-family: 'Playfair Display', serif;
-    color: #333;
+    color: #7F0C0C;
     font-size: 1.3rem;
     margin-bottom: 5px;
 }
@@ -186,7 +252,7 @@ h1 {
 }
 
 .detail-icon i {
-    color: #4a90e2;
+    color: #7F0C0C;
     font-size: 1.3rem;
 }
 
@@ -196,7 +262,7 @@ h1 {
 
 .detail-text h4 {
     font-family: 'Playfair Display', serif;
-    color: #333;
+    color: #7F0C0C;
     font-size: 1.1rem;
     margin-bottom: 5px;
 }
@@ -225,7 +291,7 @@ h1 {
 }
 
 .rsvp button {
-    background: #4a90e2;
+    background: #7F0C0C;
     color: white;
     border: none;
     padding: 12px 30px;
@@ -238,7 +304,7 @@ h1 {
 }
 
 .rsvp button:hover {
-    background: #357abd;
+    background: #6a0a0a;
     transform: translateY(-2px);
 }
 
@@ -248,7 +314,7 @@ h1 {
 }
 
 .countdown h3 {
-    color: #333;
+    color: #7F0C0C;
     margin-bottom: 15px;
     font-size: 1.2rem;
 }
@@ -274,7 +340,7 @@ h1 {
 .time-block span:first-child {
     font-size: 1.5rem;
     font-weight: bold;
-    color: #333;
+    color: #7F0C0C;
 }
 
 .time-block .label {
@@ -305,7 +371,7 @@ h1 {
 }
 
 .music-btn i {
-    color: #4a90e2;
+    color: #7F0C0C;
     font-size: 1rem;
 }
 
@@ -327,7 +393,7 @@ h1 {
 }
 
 .modal-content {
-    background: white;
+    background: #F5EFE8;
     margin: 10% auto;
     padding: 20px;
     border-radius: 15px;
@@ -364,7 +430,7 @@ textarea {
 }
 
 form button {
-    background: #4a90e2;
+    background: #7F0C0C;
     color: white;
     border: none;
     padding: 12px;
@@ -375,7 +441,7 @@ form button {
 }
 
 form button:hover {
-    background: #357abd;
+    background: #6a0a0a;
 }
 
 /* Desktop Styles */
@@ -385,7 +451,8 @@ form button:hover {
     }
 
     .header-image {
-        height: 300px;
+        height: 900px;
+        width: 60%;
     }
 
     h1 {
@@ -402,26 +469,25 @@ form button:hover {
 
     .couple-sections {
         flex-direction: row;
-        justify-content: flex-start;
-        gap: 20px;
+        justify-content: center;
+        gap: 40px;
     }
 
-    .groom-section {
-        flex: 1;
-        max-width: 350px;
+    .groom-section, .bride-section {
+        flex: 0 1 350px;
+        margin: 0;
     }
 
-    .bride-section {
-        margin-left: auto;
-        max-width: 350px;
+    .groom-section h2, .bride-section h2 {
+        font-size: 1.8rem;
     }
 
     .photo-container {
-        max-width: 300px;
+        height: 400px;
     }
 
     .couple-photo {
-        height: 350px;
+        height: 400px;
     }
 
     .person-details h3 {
@@ -581,30 +647,89 @@ form button:hover {
     }
 }
 
+@media (max-width: 767px) {
+    .header-image {
+        height: 600px;
+        width: 85%;
+    }
+}
+
 .album-section {
     margin: 20px 0;
     padding: 0 15px;
 }
 
+.featured-image {
+    margin-bottom: 30px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.featured-image img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+    aspect-ratio: 16/9;
+}
+
+.featured-image:hover {
+    transform: translateY(-5px);
+}
+
+.featured-image:hover img {
+    transform: scale(1.05);
+}
+
 .album-title {
     text-align: center;
-    margin-bottom: 20px;
+    margin: 30px 0;
     position: relative;
 }
 
 .album-title h3 {
-    font-family: 'Playfair Display', serif;
-    color: #333;
-    font-size: 1.5rem;
+    font-family: 'Great Vibes', cursive;
+    font-size: 2.5rem;
     margin-bottom: 5px;
+    color: #7F0C0C;
 }
 
 .album-title .english-title {
     font-family: 'Playfair Display', serif;
-    color: #4a90e2;
+    color: #7F0C0C;
     font-size: 1.2rem;
     font-style: italic;
-    margin-top: 5px;
+    margin-bottom: 15px;
+}
+
+.icon-container {
+    margin-top: 20px;
+}
+
+.icon-container i {
+    font-size: 2rem;
+    color: #7F0C0C;
+    background: rgba(255, 255, 255, 0.9);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    box-shadow: 0 5px 15px rgba(127, 12, 12, 0.1);
+    transition: all 0.3s ease;
+}
+
+.icon-container i:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 20px rgba(127, 12, 12, 0.2);
 }
 
 .photo-gallery {
@@ -664,7 +789,7 @@ form button:hover {
 
 .parents-section h3 {
     font-family: 'Playfair Display', serif;
-    color: #333;
+    color: #7F0C0C;
     font-size: 1.3rem;
     margin-bottom: 10px;
 }
@@ -680,7 +805,7 @@ form button:hover {
 
 .parent-name {
     font-family: 'Playfair Display', serif;
-    color: #333;
+    color: #7F0C0C;
     font-size: 1.1rem;
     margin: 5px 0;
 }
@@ -688,10 +813,13 @@ form button:hover {
 .quote-section {
     padding: 30px 15px 20px 15px;
     text-align: center;
-    background: rgba(255, 255, 255, 0.9);
+    background: #F5EFE8;
     margin: -10px 0 20px 0;
     position: relative;
     z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .quote {
@@ -756,7 +884,7 @@ form button:hover {
 }
 
 .detail-icon i {
-    color: #4a90e2;
+    color: #7F0C0C;
     font-size: 1.3rem;
 }
 
@@ -766,7 +894,7 @@ form button:hover {
 
 .detail-text h4 {
     font-family: 'Playfair Display', serif;
-    color: #333;
+    color: #7F0C0C;
     font-size: 1.1rem;
     margin-bottom: 5px;
 }
@@ -801,7 +929,7 @@ form button:hover {
 
 .venue-details h5 {
     font-family: 'Playfair Display', serif;
-    color: #4a90e2;
+    color: #7F0C0C;
     font-size: 1.1rem;
     margin-bottom: 8px;
     letter-spacing: 0.5px;
@@ -826,7 +954,7 @@ form button:hover {
     align-items: center;
     gap: 8px;
     padding: 8px 16px;
-    background-color: #4a90e2;
+    background-color: #7F0C0C;
     color: white;
     text-decoration: none;
     border-radius: 20px;
@@ -840,7 +968,7 @@ form button:hover {
 }
 
 .map-link:hover {
-    background-color: #357abd;
+    background-color: #6a0a0a;
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(74, 144, 226, 0.4);
 }
@@ -913,7 +1041,7 @@ form button:hover {
 }
 
 .wedding-gift button {
-    background: #4a90e2;
+    background: #7F0C0C;
     color: white;
     border: none;
     padding: 12px 30px;
@@ -926,7 +1054,7 @@ form button:hover {
 }
 
 .wedding-gift button:hover {
-    background: #357abd;
+    background: #6a0a0a;
     transform: translateY(-2px);
 }
 
@@ -936,7 +1064,7 @@ form button:hover {
 
 #giftModal h2 {
     font-family: 'Playfair Display', serif;
-    color: #333;
+    color: #7F0C0C;
     font-size: 1.8rem;
     margin-bottom: 25px;
     text-align: center;
@@ -953,12 +1081,12 @@ form button:hover {
 }
 
 .bank-account {
-    background: #f8f9fa;
+    background: #F5EFE8;
     border-radius: 15px;
-    padding: 25px;
+    padding: 20px;
     display: flex;
     align-items: center;
-    gap: 30px;
+    gap: 20px;
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
 }
@@ -991,7 +1119,7 @@ form button:hover {
 .account-icon {
     width: 50px;
     height: 50px;
-    background: #4a90e2;
+    background: #7F0C0C;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -1010,7 +1138,7 @@ form button:hover {
 
 .account-details h4 {
     font-family: 'Playfair Display', serif;
-    color: #333;
+    color: #7F0C0C;
     font-size: 1.2rem;
     margin-bottom: 8px;
 }
@@ -1022,7 +1150,7 @@ form button:hover {
 }
 
 .account-number {
-    color: #4a90e2;
+    color: #7F0C0C;
     font-size: 1.1rem;
     font-weight: 500;
     letter-spacing: 1px;
@@ -1062,12 +1190,38 @@ form button:hover {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    background: #F5EFE8;
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 1000;
     transition: opacity 1s ease, transform 1s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.landing-page::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    left: -50px;
+    width: 400px;
+    height: 400px;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path fill="%237F0C0C" fill-opacity="0.1" d="M50 0C55 20 80 25 100 30C80 35 55 40 50 60C45 40 20 35 0 30C20 25 45 20 50 0Z M30 40C33 52 48 55 60 58C48 61 33 64 30 76C27 64 12 61 0 58C12 55 27 52 30 40Z"/></svg>') repeat;
+    opacity: 0.2;
+    transform: rotate(-30deg);
+}
+
+.landing-page::after {
+    content: '';
+    position: absolute;
+    bottom: -50px;
+    right: -50px;
+    width: 400px;
+    height: 400px;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path fill="%237F0C0C" fill-opacity="0.1" d="M50 0C55 20 80 25 100 30C80 35 55 40 50 60C45 40 20 35 0 30C20 25 45 20 50 0Z M30 40C33 52 48 55 60 58C48 61 33 64 30 76C27 64 12 61 0 58C12 55 27 52 30 40Z"/></svg>') repeat;
+    opacity: 0.2;
+    transform: rotate(30deg);
 }
 
 .landing-content {
@@ -1077,29 +1231,28 @@ form button:hover {
 }
 
 .landing-content h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: 3rem;
-    color: #333;
-    margin-bottom: 20px;
-    letter-spacing: 2px;
+    font-family: 'Great Vibes', cursive;
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    color: #7F0C0C;
 }
 
 .landing-content .subtitle {
     font-family: 'Montserrat', sans-serif;
     font-size: 1.5rem;
-    color: #666;
+    color: #7F0C0C;
     margin-bottom: 10px;
 }
 
 .landing-content .date {
     font-family: 'Playfair Display', serif;
     font-size: 2rem;
-    color: #4a90e2;
+    color: #7F0C0C;
     margin-bottom: 30px;
 }
 
 .enter-btn {
-    background: #4a90e2;
+    background: #7F0C0C;
     color: white;
     border: none;
     padding: 15px 40px;
@@ -1108,13 +1261,13 @@ form button:hover {
     cursor: pointer;
     transition: all 0.3s ease;
     font-family: 'Montserrat', sans-serif;
-    box-shadow: 0 4px 15px rgba(74, 144, 226, 0.3);
+    box-shadow: 0 4px 15px rgba(224, 17, 95, 0.3);
 }
 
 .enter-btn:hover {
-    background: #357abd;
+    background: #6a0a0a;
     transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(74, 144, 226, 0.4);
+    box-shadow: 0 6px 20px rgba(224, 17, 95, 0.4);
 }
 
 @keyframes fadeIn {
@@ -1159,14 +1312,14 @@ form button:hover {
 .receiver-label {
     font-family: 'Montserrat', sans-serif;
     font-size: 1.2rem;
-    color: #666;
+    color: #7F0C0C;
     margin-bottom: 10px;
 }
 
 .receiver-name {
     font-family: 'Playfair Display', serif;
     font-size: 2rem;
-    color: #333;
+    color: #7F0C0C;
     font-weight: 500;
 }
 
@@ -1182,6 +1335,584 @@ form button:hover {
 
     .receiver-name {
         font-size: 1.8rem;
+    }
+}
+
+.title-with-images {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin: 40px auto;
+    max-width: 1000px;
+    padding: 0 15px;
+}
+
+.album-title {
+    text-align: center;
+    flex: 0 1 auto;
+    min-width: 300px;
+    margin-bottom: 20px;
+}
+
+.album-title h3 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 2.5rem;
+    margin-bottom: 5px;
+    color: #7F0C0C;
+}
+
+.album-title .english-title {
+    font-family: 'Playfair Display', serif;
+    color: #7F0C0C;
+    font-size: 1.2rem;
+    font-style: italic;
+    margin-bottom: 20px;
+}
+
+.side-images-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.side-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.side-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.side-image:hover {
+    transform: translateY(-5px);
+}
+
+.side-image:hover img {
+    transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+    .side-images-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .side-image {
+        width: 150px;
+        height: 150px;
+    }
+
+    .album-title {
+        margin: 20px 0;
+    }
+}
+
+@media (min-width: 768px) {
+    .album-title h3 {
+        font-size: 3.2rem;
+    }
+}
+
+.names {
+    font-family: 'Great Vibes', cursive;
+    font-size: 2.5rem;
+    margin: 1rem 0;
+    color: #7F0C0C;
+}
+
+.invitation-card h1 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
+    color: #7F0C0C;
+}
+
+.groom-name, .bride-name {
+    font-family: 'Great Vibes', cursive;
+    font-size: 2.2rem;
+    margin: 0.5rem 0;
+    color: #7F0C0C;
+}
+
+@media (min-width: 768px) {
+    .landing-content h1 {
+        font-size: 4.5rem;
+    }
+
+    .names {
+        font-size: 3.5rem;
+    }
+
+    .invitation-card h1 {
+        font-size: 3.8rem;
+    }
+
+    .groom-name, .bride-name {
+        font-size: 3rem;
+    }
+
+    .album-title h3 {
+        font-size: 3.2rem;
+    }
+}
+
+.time-section {
+    margin: 40px 0;
+    padding: 30px 15px;
+    position: relative;
+}
+
+.time-section .section-container {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(127, 12, 12, 0.1);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.time-section .section-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(to right, transparent, #7F0C0C, transparent);
+    opacity: 0.3;
+}
+
+.detail-item {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 15px;
+    transition: transform 0.3s ease;
+}
+
+.detail-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(127, 12, 12, 0.1);
+}
+
+.detail-icon {
+    width: 60px;
+    height: 60px;
+    background: #7F0C0C;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 5px 15px rgba(127, 12, 12, 0.2);
+}
+
+.detail-icon i {
+    color: #fff;
+    font-size: 1.5rem;
+}
+
+.detail-text {
+    flex: 1;
+}
+
+.detail-text h4 {
+    font-family: 'Great Vibes', cursive;
+    color: #7F0C0C;
+    font-size: 1.8rem;
+    margin-bottom: 8px;
+}
+
+.detail-text p {
+    font-family: 'Playfair Display', serif;
+    color: #333;
+    font-size: 1.2rem;
+    letter-spacing: 0.5px;
+}
+
+@media (min-width: 768px) {
+    .time-section .section-container {
+        flex-direction: row;
+        padding: 40px;
+    }
+
+    .detail-item {
+        flex: 1;
+        padding: 25px;
+    }
+
+    .detail-text h4 {
+        font-size: 2rem;
+    }
+
+    .detail-text p {
+        font-size: 1.3rem;
+    }
+}
+
+/* Decorative elements */
+.time-section .section-container::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 150px;
+    height: 150px;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path fill="%237F0C0C" fill-opacity="0.1" d="M50 0C55 20 80 25 100 30C80 35 55 40 50 60C45 40 20 35 0 30C20 25 45 20 50 0Z"/></svg>') no-repeat;
+    opacity: 0.2;
+    pointer-events: none;
+}
+
+.milestone-section {
+    margin: 60px 0;
+    padding: 0 20px;
+    position: relative;
+}
+
+.milestone-title {
+    text-align: center;
+    font-family: 'Great Vibes', cursive;
+    color: #7F0C0C;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+}
+
+.timeline {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    padding: 20px 0;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, 
+        transparent,
+        #7F0C0C 10%,
+        #7F0C0C 90%,
+        transparent
+    );
+    transform: translateX(-50%);
+}
+
+.timeline-item {
+    margin-bottom: 60px;
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.timeline-item:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    bottom: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 20px;
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 20"><path fill="none" stroke="%237F0C0C" stroke-width="1" stroke-linecap="round" d="M0,10 C20,0 30,20 50,10 C70,0 80,20 100,10" opacity="0.3"/></svg>');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+.timeline-content {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    padding: 25px 20px;
+    width: 300px;
+    position: relative;
+    box-shadow: 0 5px 15px rgba(127, 12, 12, 0.1);
+    transition: transform 0.3s ease;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-top: 40px;
+}
+
+.timeline-content::before {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30"><path fill="%237F0C0C" fill-opacity="0.1" d="M15,0 C20,10 30,15 30,15 C30,15 20,20 15,30 C10,20 0,15 0,15 C0,15 10,10 15,0 Z"/></svg>');
+    background-size: contain;
+    background-repeat: no-repeat;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.timeline-icon {
+    width: 50px;
+    height: 50px;
+    background: #7F0C0C;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.2rem;
+    margin-top: 10px;
+    position: relative;
+}
+
+.time {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: #7F0C0C;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.event {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+@media (min-width: 768px) {
+    .timeline-item {
+        margin-bottom: 80px;
+    }
+
+    .timeline-item:not(:last-child)::after {
+        bottom: -50px;
+        width: 150px;
+        height: 30px;
+    }
+
+    .timeline-item:nth-child(odd) .timeline-content {
+        margin-right: 50%;
+        margin-left: 20px;
+    }
+
+    .timeline-item:nth-child(even) .timeline-content {
+        margin-left: 50%;
+        margin-right: 20px;
+    }
+
+    .timeline-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 1.4rem;
+        margin-top: 15px;
+    }
+
+    .time {
+        font-size: 1.8rem;
+    }
+
+    .event {
+        font-size: 1.4rem;
+    }
+}
+
+@media (max-width: 767px) {
+    .timeline::before {
+        left: 20px;
+    }
+
+    .timeline-content {
+        margin-left: 50px;
+        width: calc(100% - 70px);
+    }
+
+    .timeline-item:not(:last-child)::after {
+        left: 20px;
+        transform: translateX(0);
+        width: 80px;
+    }
+}
+
+.decorative-flower {
+    position: absolute;
+    top: 50%;
+    right: -300px;
+    transform: translate(0, -50%);
+    width: 280px;
+    height: 280px;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.decorative-flower img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: drop-shadow(0 3px 5px rgba(127, 12, 12, 0.2));
+    transform: rotate(15deg);
+    transition: transform 0.3s ease;
+}
+
+.decorative-flower:hover img {
+    transform: rotate(0deg) scale(1.1);
+}
+
+@media (min-width: 768px) {
+    .decorative-flower {
+        width: 350px;
+        height: 350px;
+        right: -400px;
+    }
+}
+
+@media (max-width: 767px) {
+    .decorative-flower {
+        right: -200px;
+        width: 200px;
+        height: 200px;
+    }
+}
+
+.decorative-leaf {
+    position: absolute;
+    top: 50%;
+    left: -300px;
+    transform: translate(0, -50%);
+    width: 280px;
+    height: 280px;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.decorative-leaf img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: drop-shadow(0 3px 5px rgba(127, 12, 12, 0.2));
+    transform: rotate(-15deg);
+    transition: transform 0.3s ease;
+}
+
+.decorative-leaf:hover img {
+    transform: rotate(0deg) scale(1.1);
+}
+
+@media (min-width: 768px) {
+    .decorative-leaf {
+        width: 350px;
+        height: 350px;
+        left: -400px;
+    }
+}
+
+@media (max-width: 767px) {
+    .decorative-leaf {
+        left: -200px;
+        width: 200px;
+        height: 200px;
+    }
+}
+
+.decorative-flower4 {
+    position: absolute;
+    top: 50%;
+    right: -300px;
+    transform: translate(0, -50%);
+    width: 280px;
+    height: 280px;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.decorative-flower4 img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: drop-shadow(0 3px 5px rgba(127, 12, 12, 0.2));
+    transform: rotate(15deg);
+    transition: transform 0.3s ease;
+}
+
+.decorative-flower4:hover img {
+    transform: rotate(0deg) scale(1.1);
+}
+
+@media (min-width: 768px) {
+    .decorative-flower4 {
+        width: 350px;
+        height: 350px;
+        right: -400px;
+    }
+}
+
+@media (max-width: 767px) {
+    .decorative-flower4 {
+        right: -200px;
+        width: 200px;
+        height: 200px;
+    }
+}
+
+.wedding-symbol {
+    width: 200px;
+    height: 200px;
+    margin: 30px auto 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.wedding-symbol img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: drop-shadow(0 3px 5px rgba(127, 12, 12, 0.2));
+    transition: transform 0.3s ease;
+}
+
+.wedding-symbol:hover img {
+    transform: scale(1.1);
+}
+
+@media (min-width: 768px) {
+    .wedding-symbol {
+        width: 250px;
+        height: 250px;
+        margin-top: 40px;
+    }
+}
+
+@media (max-width: 767px) {
+    .wedding-symbol {
+        width: 180px;
+        height: 180px;
+        margin-top: 25px;
     }
 }
 
