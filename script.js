@@ -203,4 +203,21 @@ window.onclick = function(event) {
     if (event.target.classList.contains('modal')) {
         event.target.style.display = 'none';
     }
-} 
+}
+
+// Landing Page
+const landingPage = document.querySelector('.landing-page');
+const mainContent = document.querySelector('.main-content');
+const enterBtn = document.querySelector('.enter-btn');
+
+enterBtn.addEventListener('click', function() {
+    landingPage.style.opacity = '0';
+    landingPage.style.transform = 'scale(1.1)';
+    
+    setTimeout(() => {
+        landingPage.style.display = 'none';
+        mainContent.style.display = 'block';
+        // Start playing music when entering the main page
+        attemptAutoplay();
+    }, 1000);
+}); 

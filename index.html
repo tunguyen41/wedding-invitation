@@ -9,240 +9,255 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="music-player">
-        <audio id="bgMusic" loop>
-            <source src="music/wedding-song.mp3" type="audio/mpeg">
-            Your browser does not support the audio element.
-        </audio>
-        <button id="musicToggle" class="music-btn">
-            <i class="fas fa-music"></i>
-            <span class="music-text">Play Music</span>
-        </button>
+    <div class="landing-page">
+        <div class="landing-content">
+            <h1>Thành Trung & Hương Giang</h1>
+            <p class="subtitle">Đám cưới của chúng tôi</p>
+            <p class="date">15.06.2024</p>
+            <div class="receiver-section">
+                <p class="receiver-label">Kính mời</p>
+                <p class="receiver-name">Ông/Bà</p>
+            </div>
+            <button class="enter-btn">Mở thiệp</button>
+        </div>
     </div>
 
-    <div class="container">
-        <div class="invitation-card">
-            <div class="header-image">
-                <img src="images/venue.jpg" alt="Wedding Header" class="header-bg">
-            </div>
-            
-            <div class="quote-section">
-                <p class="quote">"In all the world, there is no heart for me like yours.<br>In all the world, there is no love for you like mine."</p>
-            </div>
+    <div class="main-content" style="display: none;">
+        <div class="music-player">
+            <audio id="bgMusic" loop>
+                <source src="music/wedding-song.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+            <button id="musicToggle" class="music-btn">
+                <i class="fas fa-music"></i>
+                <span class="music-text">Play Music</span>
+            </button>
+        </div>
 
-            <div class="header">
-                <h1>Wedding Invitation</h1>
-                <div class="couple-names">
-                    <span class="name">Thành Trung</span>
-                    <span class="and">&</span>
-                    <span class="name">Hương Giang</span>
+        <div class="container">
+            <div class="invitation-card">
+                <div class="header-image">
+                    <img src="images/venue.jpg" alt="Wedding Header" class="header-bg">
                 </div>
-            </div>
-
-            <div class="couple-sections">
-                <div class="groom-section">
-                    <h2>Chú rể</h2>
-                    <div class="photo-container">
-                        <img src="images/groom.jpg" alt="Groom Photo" class="couple-photo">
-                    </div>
-                    <div class="person-details">
-                        <h3>Thành Trung</h3>
-                    
-                    </div>
+                
+                <div class="quote-section">
+                    <p class="quote">"In all the world, there is no heart for me like yours.<br>In all the world, there is no love for you like mine."</p>
                 </div>
 
-                <div class="bride-section">
-                    <h2>Cô dâu</h2>
-                    <div class="photo-container">
-                        <img src="images/brides.jpg" alt="Bride Photo" class="couple-photo">
+                <div class="header">
+                    <h1>Wedding Invitation</h1>
+                    <div class="couple-names">
+                        <span class="name">Thành Trung</span>
+                        <span class="and">&</span>
+                        <span class="name">Hương Giang</span>
                     </div>
-                    <div class="person-details">
-                        <h3>Hương Giang</h3>
+                </div>
+
+                <div class="couple-sections">
+                    <div class="groom-section">
+                        <h2>Chú rể</h2>
+                        <div class="photo-container">
+                            <img src="images/groom.jpg" alt="Groom Photo" class="couple-photo">
+                        </div>
+                        <div class="person-details">
+                            <h3>Thành Trung</h3>
                         
+                        </div>
                     </div>
-                </div>
-            </div>
-            
-            <div class="parents-info">
-                <div class="parents-section">
-                    <h3>Nhà trai</h3>
-                    <div class="parent-details">
-                        <p class="parent-name">Mr. Nguyen Van A</p>
-                        <p class="parent-name">Mrs. Nguyen Thi B</p>
-                    </div>
-                </div>
-                <div class="parents-section">
-                    <h3>Nhà gái</h3>
-                    <div class="parent-details">
-                        <p class="parent-name">Ông Doãn Văn Long</p>
-                        <p class="parent-name">Bà Nguyễn Thị Phương Anh</p>
-                        
-                    </div>
-                </div>
-            </div>
 
-            <div class="time-section">
-                <div class="section-container">
-                    <div class="detail-item">
-                        <div class="detail-icon">
-                            <i class="far fa-calendar-alt"></i>
+                    <div class="bride-section">
+                        <h2>Cô dâu</h2>
+                        <div class="photo-container">
+                            <img src="images/brides.jpg" alt="Bride Photo" class="couple-photo">
                         </div>
-                        <div class="detail-text">
-                            <h4>Ngày</h4>
-                            <p>Saturday, 15th June 2024</p>
-                        </div>
-                    </div>
-                    <div class="detail-item">
-                        <div class="detail-icon">
-                            <i class="far fa-clock"></i>
-                        </div>
-                        <div class="detail-text">
-                            <h4>Giờ</h4>
-                            <p>11:00 AM</p>
+                        <div class="person-details">
+                            <h3>Hương Giang</h3>
+                            
                         </div>
                     </div>
                 </div>
-            </div>
-
-            <div class="location-section">
-                <div class="section-container">
-                    <div class="detail-item">
-                        <div class="detail-icon">
-                            <i class="fas fa-map-marker-alt"></i>
+                
+                <div class="parents-info">
+                    <div class="parents-section">
+                        <h3>Nhà trai</h3>
+                        <div class="parent-details">
+                            <p class="parent-name">Mr. Nguyen Van A</p>
+                            <p class="parent-name">Mrs. Nguyen Thi B</p>
                         </div>
-                        <div class="detail-text">
-                            <h4>Địa điểm</h4>
-                            <div class="venue-details">
-                                <h5>TRUNG TÂM TỔ CHỨC SỰ KIỆN WHITE PALACE</h5>
-                                <p class="venue-hall">Hội Trường LonDon - Sảnh Châu Âu</p>
-                                <p class="venue-address">Địa chỉ: Đại lộ Võ Nguyên Giáp - Phường Đông Vệ - Thanh Hóa</p>
-                                <a href="https://maps.google.com/?q=WHITE+PALACE+Đại+lộ+Võ+Nguyên+Giáp+Phường+Đông+Vệ+Thanh+Hóa" target="_blank" class="map-link">
-                                    <i class="fas fa-map"></i>
-                                    Xem bản đồ
-                                </a>
+                    </div>
+                    <div class="parents-section">
+                        <h3>Nhà gái</h3>
+                        <div class="parent-details">
+                            <p class="parent-name">Ông Doãn Văn Long</p>
+                            <p class="parent-name">Bà Nguyễn Thị Phương Anh</p>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                <div class="time-section">
+                    <div class="section-container">
+                        <div class="detail-item">
+                            <div class="detail-icon">
+                                <i class="far fa-calendar-alt"></i>
+                            </div>
+                            <div class="detail-text">
+                                <h4>Ngày</h4>
+                                <p>Saturday, 15th June 2024</p>
+                            </div>
+                        </div>
+                        <div class="detail-item">
+                            <div class="detail-icon">
+                                <i class="far fa-clock"></i>
+                            </div>
+                            <div class="detail-text">
+                                <h4>Giờ</h4>
+                                <p>11:00 AM</p>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="album-section">
-                <div class="album-title">
-                    <h3>Kỷ niệm của chúng tôi</h3>
-                    <p class="english-title">Our Memories</p>
-                </div>
-                <div class="photo-gallery">
-                    <div class="gallery-item" onclick="openLightbox(this)">
-                        <img src="images/z6276583636430_cf698b41e44ca265efa3dd38fc797d68.jpg" alt="Memory 1">
-                    </div>
-                    <div class="gallery-item" onclick="openLightbox(this)">
-                        <img src="images/z6276583628068_a530bc354873818abf9c9ff14819ae8a.jpg" alt="Memory 2">
-                    </div>
-                    <div class="gallery-item" onclick="openLightbox(this)">
-                        <img src="images/z6276583630743_8d1e8d12212646a21fe1de0d69c92137.jpg" alt="Memory 3">
-                    </div>
-                    <div class="gallery-item" onclick="openLightbox(this)">
-                        <img src="images/z6276583641780_d9d7c58e4ea090aaf98b75e82eabc3d9.jpg" alt="Memory 4">
-                    </div>
-                    <div class="gallery-item" onclick="openLightbox(this)">
-                        <img src="images/z6276583646298_557945b129df43dc8f3eb2c1143ff585.jpg" alt="Memory 5">
-                    </div>
-                    <div class="gallery-item" onclick="openLightbox(this)">
-                        <img src="images/z6276583636430_cf698b41e44ca265efa3dd38fc797d68.jpg" alt="Memory 6">
-                    </div>
-                    <div class="gallery-item" onclick="openLightbox(this)">
-                        <img src="images/z6276583628068_a530bc354873818abf9c9ff14819ae8a.jpg" alt="Memory 7">
-                    </div>
-                    <div class="gallery-item" onclick="openLightbox(this)">
-                        <img src="images/z6276583630743_8d1e8d12212646a21fe1de0d69c92137.jpg" alt="Memory 8">
-                    </div>
-                    <div class="gallery-item" onclick="openLightbox(this)">
-                        <img src="images/z6276583641780_d9d7c58e4ea090aaf98b75e82eabc3d9.jpg" alt="Memory 9">
-                    </div>
-                    <div class="gallery-item" onclick="openLightbox(this)">
-                        <img src="images/z6276583646298_557945b129df43dc8f3eb2c1143ff585.jpg" alt="Memory 10">
-                    </div>
-                </div>
-            </div>
-
-            <div class="lightbox-modal">
-                <span class="lightbox-close">&times;</span>
-                <img class="lightbox-content" id="lightboxImage">
-                <div class="lightbox-nav">
-                    <button class="lightbox-prev">&lt;</button>
-                    <button class="lightbox-next">&gt;</button>
-                </div>
-            </div>
-
-            <div class="rsvp">
-                <button id="rsvpBtn">Xác nhận tham dự</button>
-            </div>
-
-            <div class="wedding-gift">
-                <button id="giftBtn">Gửi lời chúc mừng</button>
-            </div>
-
-            <div id="giftModal" class="modal">
-                <div class="modal-content">
-                    <span class="close">&times;</span>
-                    <h2>Gửi lời chúc mừng</h2>
-                    <div class="gift-container">
-                        <div class="bank-account">
-                            <div class="account-info">
-                                <div class="account-icon">
-                                    <i class="fas fa-university"></i>
-                                </div>
-                                <div class="account-details">
-                                    <h4>Chú rể - Thành Trung</h4>
-                                    <p class="bank-name">Ngân hàng Techcombank</p>
-                                    <p class="account-number">19036517835012</p>
+                <div class="location-section">
+                    <div class="section-container">
+                        <div class="detail-item">
+                            <div class="detail-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="detail-text">
+                                <h4>Địa điểm</h4>
+                                <div class="venue-details">
+                                    <h5>TRUNG TÂM TỔ CHỨC SỰ KIỆN WHITE PALACE</h5>
+                                    <p class="venue-hall">Hội Trường LonDon - Sảnh Châu Âu</p>
+                                    <p class="venue-address">Địa chỉ: Đại lộ Võ Nguyên Giáp - Phường Đông Vệ - Thanh Hóa</p>
+                                    <a href="https://maps.google.com/?q=WHITE+PALACE+Đại+lộ+Võ+Nguyên+Giáp+Phường+Đông+Vệ+Thanh+Hóa" target="_blank" class="map-link">
+                                        <i class="fas fa-map"></i>
+                                        Xem bản đồ
+                                    </a>
                                 </div>
                             </div>
-                            <div class="qr-code">
-                                <img src="images/qr1.jpg" alt="QR Code - Thành Trung" class="qr-image">
-                            </div>
                         </div>
-                        <div class="bank-account">
-                            <div class="account-info">
-                                <div class="account-icon">
-                                    <i class="fas fa-university"></i>
+                    </div>
+                </div>
+
+                <div class="album-section">
+                    <div class="album-title">
+                        <h3>Kỷ niệm của chúng tôi</h3>
+                        <p class="english-title">Our Memories</p>
+                    </div>
+                    <div class="photo-gallery">
+                        <div class="gallery-item" onclick="openLightbox(this)">
+                            <img src="images/z6276583636430_cf698b41e44ca265efa3dd38fc797d68.jpg" alt="Memory 1">
+                        </div>
+                        <div class="gallery-item" onclick="openLightbox(this)">
+                            <img src="images/z6276583628068_a530bc354873818abf9c9ff14819ae8a.jpg" alt="Memory 2">
+                        </div>
+                        <div class="gallery-item" onclick="openLightbox(this)">
+                            <img src="images/z6276583630743_8d1e8d12212646a21fe1de0d69c92137.jpg" alt="Memory 3">
+                        </div>
+                        <div class="gallery-item" onclick="openLightbox(this)">
+                            <img src="images/z6276583641780_d9d7c58e4ea090aaf98b75e82eabc3d9.jpg" alt="Memory 4">
+                        </div>
+                        <div class="gallery-item" onclick="openLightbox(this)">
+                            <img src="images/z6276583646298_557945b129df43dc8f3eb2c1143ff585.jpg" alt="Memory 5">
+                        </div>
+                        <div class="gallery-item" onclick="openLightbox(this)">
+                            <img src="images/z6276583636430_cf698b41e44ca265efa3dd38fc797d68.jpg" alt="Memory 6">
+                        </div>
+                        <div class="gallery-item" onclick="openLightbox(this)">
+                            <img src="images/z6276583628068_a530bc354873818abf9c9ff14819ae8a.jpg" alt="Memory 7">
+                        </div>
+                        <div class="gallery-item" onclick="openLightbox(this)">
+                            <img src="images/z6276583630743_8d1e8d12212646a21fe1de0d69c92137.jpg" alt="Memory 8">
+                        </div>
+                        <div class="gallery-item" onclick="openLightbox(this)">
+                            <img src="images/z6276583641780_d9d7c58e4ea090aaf98b75e82eabc3d9.jpg" alt="Memory 9">
+                        </div>
+                        <div class="gallery-item" onclick="openLightbox(this)">
+                            <img src="images/z6276583646298_557945b129df43dc8f3eb2c1143ff585.jpg" alt="Memory 10">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lightbox-modal">
+                    <span class="lightbox-close">&times;</span>
+                    <img class="lightbox-content" id="lightboxImage">
+                    <div class="lightbox-nav">
+                        <button class="lightbox-prev">&lt;</button>
+                        <button class="lightbox-next">&gt;</button>
+                    </div>
+                </div>
+
+                <div class="rsvp">
+                    <button id="rsvpBtn">Xác nhận tham dự</button>
+                </div>
+
+                <div class="wedding-gift">
+                    <button id="giftBtn">Gửi lời chúc mừng</button>
+                </div>
+
+                <div id="giftModal" class="modal">
+                    <div class="modal-content">
+                        <span class="close">&times;</span>
+                        <h2>Gửi lời chúc mừng</h2>
+                        <div class="gift-container">
+                            <div class="bank-account">
+                                <div class="account-info">
+                                    <div class="account-icon">
+                                        <i class="fas fa-university"></i>
+                                    </div>
+                                    <div class="account-details">
+                                        <h4>Chú rể - Thành Trung</h4>
+                                        <p class="bank-name">Ngân hàng Techcombank</p>
+                                        <p class="account-number">19036517835012</p>
+                                    </div>
                                 </div>
-                                <div class="account-details">
-                                    <h4>Cô dâu - Hương Giang</h4>
-                                    <p class="bank-name">Ngân hàng BIDV</p>
-                                    <p class="account-number">31410003456789</p>
+                                <div class="qr-code">
+                                    <img src="images/qr1.jpg" alt="QR Code - Thành Trung" class="qr-image">
                                 </div>
                             </div>
-                            <div class="qr-code">
-                                <img src="images/qr2.jpg" alt="QR Code - Hương Giang" class="qr-image">
+                            <div class="bank-account">
+                                <div class="account-info">
+                                    <div class="account-icon">
+                                        <i class="fas fa-university"></i>
+                                    </div>
+                                    <div class="account-details">
+                                        <h4>Cô dâu - Hương Giang</h4>
+                                        <p class="bank-name">Ngân hàng BIDV</p>
+                                        <p class="account-number">31410003456789</p>
+                                    </div>
+                                </div>
+                                <div class="qr-code">
+                                    <img src="images/qr2.jpg" alt="QR Code - Hương Giang" class="qr-image">
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="venue-photo">
-                <img src="images/end.jpg" alt="Venue Photo" class="venue-image">
-            </div>
+                <div class="venue-photo">
+                    <img src="images/end.jpg" alt="Venue Photo" class="venue-image">
+                </div>
 
-            <div class="countdown">
-                <h3>Countdown to the Big Day</h3>
-                <div class="timer">
-                    <div class="time-block">
-                        <span id="days">00</span>
-                        <span class="label">Days</span>
-                    </div>
-                    <div class="time-block">
-                        <span id="hours">00</span>
-                        <span class="label">Hours</span>
-                    </div>
-                    <div class="time-block">
-                        <span id="minutes">00</span>
-                        <span class="label">Minutes</span>
-                    </div>
-                    <div class="time-block">
-                        <span id="seconds">00</span>
-                        <span class="label">Seconds</span>
+                <div class="countdown">
+                    <h3>Countdown to the Big Day</h3>
+                    <div class="timer">
+                        <div class="time-block">
+                            <span id="days">00</span>
+                            <span class="label">Days</span>
+                        </div>
+                        <div class="time-block">
+                            <span id="hours">00</span>
+                            <span class="label">Hours</span>
+                        </div>
+                        <div class="time-block">
+                            <span id="minutes">00</span>
+                            <span class="label">Minutes</span>
+                        </div>
+                        <div class="time-block">
+                            <span id="seconds">00</span>
+                            <span class="label">Seconds</span>
+                        </div>
                     </div>
                 </div>
             </div>
