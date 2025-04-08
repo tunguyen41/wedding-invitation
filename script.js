@@ -206,18 +206,26 @@ window.onclick = function(event) {
 }
 
 // Landing Page
-const landingPage = document.querySelector('.landing-page');
-const mainContent = document.querySelector('.main-content');
-const enterBtn = document.querySelector('.enter-btn');
+document.addEventListener('DOMContentLoaded', function() {
+    const landingPage = document.querySelector('.landing-page');
+    const mainContent = document.querySelector('.main-content');
+    const enterBtn = document.querySelector('.enter-btn');
 
-enterBtn.addEventListener('click', function() {
-    landingPage.style.opacity = '0';
-    landingPage.style.transform = 'scale(1.1)';
-    
-    setTimeout(() => {
-        landingPage.style.display = 'none';
-        mainContent.style.display = 'block';
-        // Start playing music when entering the main page
-        attemptAutoplay();
-    }, 1000);
+    if (enterBtn) {
+        enterBtn.addEventListener('click', function() {
+            landingPage.style.opacity = '0';
+            landingPage.style.transform = 'scale(1.1)';
+            
+            setTimeout(() => {
+                landingPage.style.display = 'none';
+                mainContent.style.display = 'block';
+                mainContent.classList.add('visible');
+                document.body.style.overflow = 'auto';
+                // Start playing music when entering the main page
+                attemptAutoplay();
+                // Trigger resize event to fix any layout issues
+                window.dispatchEvent(new Event('resize'));
+            }, 1000);
+        });
+    }
 }); 

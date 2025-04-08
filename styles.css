@@ -144,29 +144,23 @@ h1 {
     border-radius: 15px;
     padding: 20px;
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.bride-section {
+    margin-left: auto;
     max-width: 350px;
-    margin: 0 auto;
 }
 
-.groom-section h2 {
+.groom-section h2, .bride-section h2 {
     font-family: 'Playfair Display', serif;
     color: #7F0C0C;
     font-size: 1.5rem;
     margin-bottom: 15px;
-    text-align: left;
-}
-
-.bride-section h2 {
-    font-family: 'Playfair Display', serif;
-    color: #7F0C0C;
-    font-size: 1.5rem;
-    margin-bottom: 15px;
-    text-align: right;
 }
 
 .photo-container {
     width: 100%;
-    height: 350px;
+    max-width: 300px;
     margin: 0 auto;
     border-radius: 10px;
     overflow: hidden;
@@ -175,7 +169,7 @@ h1 {
 
 .couple-photo {
     width: 100%;
-    height: 350px;
+    height: 300px;
     object-fit: cover;
     transition: transform 0.3s ease;
 }
@@ -469,25 +463,26 @@ form button:hover {
 
     .couple-sections {
         flex-direction: row;
-        justify-content: center;
-        gap: 40px;
+        justify-content: flex-start;
+        gap: 20px;
     }
 
-    .groom-section, .bride-section {
-        flex: 0 1 350px;
-        margin: 0;
+    .groom-section {
+        flex: 1;
+        max-width: 350px;
     }
 
-    .groom-section h2, .bride-section h2 {
-        font-size: 1.8rem;
+    .bride-section {
+        margin-left: auto;
+        max-width: 350px;
     }
 
     .photo-container {
-        height: 400px;
+        max-width: 300px;
     }
 
     .couple-photo {
-        height: 400px;
+        height: 350px;
     }
 
     .person-details h3 {
@@ -824,7 +819,7 @@ form button:hover {
 
 .quote {
     font-family: 'Playfair Display', serif;
-    color: #333;
+    color: #7F0C0C;
     font-size: 1.2rem;
     line-height: 1.6;
     margin-bottom: 10px;
@@ -1189,39 +1184,47 @@ form button:hover {
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     background: #F5EFE8;
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 1000;
+    z-index: 2000;
     transition: opacity 1s ease, transform 1s ease;
+}
+
+.main-content {
+    display: none;
+    width: 100%;
+    min-height: 100vh;
     position: relative;
-    overflow: hidden;
+    z-index: 1;
 }
 
-.landing-page::before {
-    content: '';
-    position: absolute;
-    top: -50px;
-    left: -50px;
-    width: 400px;
-    height: 400px;
-    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path fill="%237F0C0C" fill-opacity="0.1" d="M50 0C55 20 80 25 100 30C80 35 55 40 50 60C45 40 20 35 0 30C20 25 45 20 50 0Z M30 40C33 52 48 55 60 58C48 61 33 64 30 76C27 64 12 61 0 58C12 55 27 52 30 40Z"/></svg>') repeat;
-    opacity: 0.2;
-    transform: rotate(-30deg);
+.main-content.visible {
+    display: block;
+    animation: fadeIn 1s ease;
 }
 
-.landing-page::after {
-    content: '';
-    position: absolute;
-    bottom: -50px;
-    right: -50px;
-    width: 400px;
-    height: 400px;
-    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path fill="%237F0C0C" fill-opacity="0.1" d="M50 0C55 20 80 25 100 30C80 35 55 40 50 60C45 40 20 35 0 30C20 25 45 20 50 0Z M30 40C33 52 48 55 60 58C48 61 33 64 30 76C27 64 12 61 0 58C12 55 27 52 30 40Z"/></svg>') repeat;
-    opacity: 0.2;
-    transform: rotate(30deg);
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@media (max-width: 767px) {
+    .landing-page {
+        height: 100%;
+        min-height: 100vh;
+        padding: 20px;
+    }
+
+    .main-content {
+        padding-top: 20px;
+    }
 }
 
 .landing-content {
@@ -1268,17 +1271,6 @@ form button:hover {
     background: #6a0a0a;
     transform: translateY(-3px);
     box-shadow: 0 6px 20px rgba(224, 17, 95, 0.4);
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
 }
 
 @media (max-width: 768px) {
@@ -1653,7 +1645,6 @@ form button:hover {
     flex-direction: column;
     align-items: center;
     gap: 10px;
-    margin-top: 40px;
 }
 
 .timeline-content::before {
@@ -1752,132 +1743,6 @@ form button:hover {
     }
 }
 
-.decorative-flower {
-    position: absolute;
-    top: 50%;
-    right: -300px;
-    transform: translate(0, -50%);
-    width: 280px;
-    height: 280px;
-    z-index: 2;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.decorative-flower img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    filter: drop-shadow(0 3px 5px rgba(127, 12, 12, 0.2));
-    transform: rotate(15deg);
-    transition: transform 0.3s ease;
-}
-
-.decorative-flower:hover img {
-    transform: rotate(0deg) scale(1.1);
-}
-
-@media (min-width: 768px) {
-    .decorative-flower {
-        width: 350px;
-        height: 350px;
-        right: -400px;
-    }
-}
-
-@media (max-width: 767px) {
-    .decorative-flower {
-        right: -200px;
-        width: 200px;
-        height: 200px;
-    }
-}
-
-.decorative-leaf {
-    position: absolute;
-    top: 50%;
-    left: -300px;
-    transform: translate(0, -50%);
-    width: 280px;
-    height: 280px;
-    z-index: 2;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.decorative-leaf img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    filter: drop-shadow(0 3px 5px rgba(127, 12, 12, 0.2));
-    transform: rotate(-15deg);
-    transition: transform 0.3s ease;
-}
-
-.decorative-leaf:hover img {
-    transform: rotate(0deg) scale(1.1);
-}
-
-@media (min-width: 768px) {
-    .decorative-leaf {
-        width: 350px;
-        height: 350px;
-        left: -400px;
-    }
-}
-
-@media (max-width: 767px) {
-    .decorative-leaf {
-        left: -200px;
-        width: 200px;
-        height: 200px;
-    }
-}
-
-.decorative-flower4 {
-    position: absolute;
-    top: 50%;
-    right: -300px;
-    transform: translate(0, -50%);
-    width: 280px;
-    height: 280px;
-    z-index: 2;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.decorative-flower4 img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    filter: drop-shadow(0 3px 5px rgba(127, 12, 12, 0.2));
-    transform: rotate(15deg);
-    transition: transform 0.3s ease;
-}
-
-.decorative-flower4:hover img {
-    transform: rotate(0deg) scale(1.1);
-}
-
-@media (min-width: 768px) {
-    .decorative-flower4 {
-        width: 350px;
-        height: 350px;
-        right: -400px;
-    }
-}
-
-@media (max-width: 767px) {
-    .decorative-flower4 {
-        right: -200px;
-        width: 200px;
-        height: 200px;
-    }
-}
-
 .wedding-symbol {
     width: 200px;
     height: 200px;
@@ -1914,5 +1779,21 @@ form button:hover {
         height: 180px;
         margin-top: 25px;
     }
+}
+
+@media (min-width: 768px) {
+    .quote {
+        font-size: 1.5rem;
+        padding: 0 40px;
+    }
+}
+
+.decorative-flower, .decorative-flower img,
+.decorative-flower:hover img,
+.decorative-leaf, .decorative-leaf img,
+.decorative-leaf:hover img,
+.decorative-flower4, .decorative-flower4 img,
+.decorative-flower4:hover img {
+    display: none;
 }
 
